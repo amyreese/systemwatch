@@ -29,4 +29,5 @@ setup(
     license='MIT License',
     packages=['systemwatch'],
     scripts=['bin/systemwatch'],
+    requires=['ent'],
 )
