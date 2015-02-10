@@ -88,11 +88,11 @@ class RegexGrouping(Section):
 
                     for pos, value in enumerate(match.groups()):
                         self.values[pos].add(value)
-                        #self.counters[pos][value] += 1
+                        # self.counters[pos][value] += 1
 
                     for key, value in match.groupdict().items():
                         self.values[key].add(value)
-                        #self.counters[key][value] += 1
+                        # self.counters[key][value] += 1
 
                     break  # only care about the first regex to match a line
 

@@ -10,8 +10,6 @@ import importlib
 import os
 from os import path
 
-from ..config import Config
-
 cwd = path.abspath(path.dirname(__file__))
 files = os.listdir(cwd)
 
