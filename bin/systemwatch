@@ -10,10 +10,32 @@ from __future__ import unicode_literals
 
 import sys
 
+from argparse import ArgumentParser
+from systemwatch import SystemWatch
+
+
 try:
+    # preemptively try importing systemd so we can fail early
     import systemd
     from systemd import journal
 
 except ImportError:
     print('Error: could not import systemd')
     sys.exit(1)
+
+
+def main():
+    parser = ArgumentParser(description='generate reports from the systemd '
+                            'journal logs')
+    parser.add_argument('--config', type=str,
+                        default='/etc/systemwatch/config.json',
+                        help='path to local configuration')
+
+    options = parser.parse_args()
+    output = SystemWatch(options).run()
+
+    print(output)
+
+
+if __name__ == '__main__':
+    main()

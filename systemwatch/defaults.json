@@ -1,0 +1,7 @@
+{
+	"templates": {
+		"email": "# {title}\n\n{content}\n",
+		"report": "## {name}\n\n{content}\n\n",
+		"section": "### {name}\n\n{content}\n\n"
+	}
+}
